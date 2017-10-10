@@ -14,7 +14,7 @@ namespace lr1_ver3
         {
             this.I = I;
             this.J = J;
-            IJ = new List<int>();
+            this.IJ = new List<int>();
             for (int i = 0; i < I.Count*2; i++)
             {
                 IJ.Add(0);
