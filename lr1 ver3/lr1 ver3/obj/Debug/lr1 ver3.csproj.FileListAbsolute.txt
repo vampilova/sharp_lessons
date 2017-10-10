@@ -1,0 +1,12 @@
+C:\Users\1\Desktop\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\bin\Debug\lr1 ver3.exe.config
+C:\Users\1\Desktop\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\bin\Debug\lr1 ver3.exe
+C:\Users\1\Desktop\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\bin\Debug\lr1 ver3.pdb
+C:\Users\1\Desktop\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\obj\Debug\lr1 ver3.csprojResolveAssemblyReference.cache
+C:\Users\1\Desktop\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\obj\Debug\lr1 ver3.exe
+C:\Users\1\Desktop\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\obj\Debug\lr1 ver3.pdb
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\bin\Debug\lr1 ver3.exe.config
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\obj\Debug\lr1 ver3.exe
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\obj\Debug\lr1 ver3.pdb
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\bin\Debug\lr1 ver3.exe
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\bin\Debug\lr1 ver3.pdb
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\lr1 ver3\lr1 ver3\obj\Debug\lr1 ver3.csprojResolveAssemblyReference.cache
