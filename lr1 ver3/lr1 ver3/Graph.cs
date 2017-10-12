@@ -97,8 +97,10 @@ namespace lr1_ver3
             for (int k = H[vertex_begin]; k != -1; k = L[k])
             {
                 if ((I[k] == vertex_begin) && (J[k] == vertex_end))
+                {
                     arc = k;
                 break;
+                }
             }
             del(vertex_begin, arc);
         }
