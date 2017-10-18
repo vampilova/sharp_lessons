@@ -9,12 +9,12 @@ namespace lr1_ver3
 {
     class Graph
     {
-        List<int> I, J, IJ, L, H,numComp;
+        public List<int> I, J, IJ, L, H,numComp;
         public Graph(List<int>I,List<int>J)
         {
             this.I = I;
             this.J = J;
-            this.IJ = new List<int>();
+            IJ = new List<int>();
             for (int i = 0; i < I.Count*2; i++)
             {
                 IJ.Add(0);
@@ -26,11 +26,10 @@ namespace lr1_ver3
             }
             this.L = new List<int>();
             this.H = new List<int>();
-            int n = 0;
+            int n = -1;
             for (int i=0;i<I.Count;i++)
             {
-                if (I[i] > n)
-                    n = I[i];
+                if (I[i] > n) n = I[i];
             }
             for (int i = 0; i <= n; i++)
                 H.Add(-1);
@@ -53,56 +52,101 @@ namespace lr1_ver3
                 j = i;
                 i = temp;
             }
+            int max = Math.Max(i, j);
             I.Add(i);
             J.Add(j);
             IJ.InsertRange(I.Count()-1,new List<int> { i, j });
             int count = H.Count;
-            int max = Math.Max(i, j);
-            
             for (int k = 0; k <= max - count; k++)
                 H.Add(-1);
             L.Add(H[i]);
             H[i] = I.Count - 1;
         }
 
-        public void del(int vertex, int arc)
+        public void BFS(int vertex)
         {
-            if (H[vertex] == arc)
+            List<int> rang=new List<int>();
+            List<int> parent = new List<int>();
+            for (int i = 0; i < H.Count; i++)
             {
-                int tmp = H[vertex];
-                H[vertex] = L[H[vertex]];
-                L[tmp] = -1;
+               rang.Add(-1);
+               parent.Add(-1);
             }
-            else
-                for (int k = H[vertex]; k != -1; k = L[k])
+            Queue<int> que=new Queue<int>();
+            que.Enqueue(vertex);
+            rang[vertex] = 0;
+            while(que.Count !=0)
+            {
+                int from = que.Peek();
+                que.Dequeue();
+                for (int i=H[vertex];i!=-1;i=L[i])
                 {
-                    if (L[k] == arc)
-                    {
-                        int tmp = L[k];
-                        L[k] = L[L[k]];
-                        L[tmp] = -1;
-                    }
+                    int to = IJ[I.Count * 2 - i - 1];
+                        if (rang[to] == -1)
+                        {
+                            que.Enqueue(to);
+                            rang[to] = rang[from] + 1;
+                            parent[to] = from;
+                        }
                 }
-        }
-
-        public void del_edge_by_arc(int arc)
-        {
-           int vertex_begin = I[arc];
-            del(vertex_begin, arc);
-        }
-
-        public void del_edge_by_vertex(int vertex_begin, int vertex_end)
-        {
-            int arc = 0;
-            for (int k = H[vertex_begin]; k != -1; k = L[k])
-            {
-                if ((I[k] == vertex_begin) && (J[k] == vertex_end))
-                    arc = k;
-                break;
             }
-            del(vertex_begin, arc);
+            for (int i=0;i<parent.Count;i++)
+            { Console.Write("{0} ", parent[i]); }
         }
-
+        public List<int> BFS2(int vertex,List<int> I,List<int> J)
+        {
+            List<List<int>> graph = new List<List<int>>();
+            int max = -1;
+            for(int i=0;i<I.Count;i++)
+                if (I[i]>max)
+                {
+                    max = I[i];
+                    if (J[i] > max) max = J[i];
+                }
+            max++;
+            for(int i=0;i<max;i++)
+            {
+                graph.Add(new List<int>());
+                for (int j = 0; j < max; j++)
+                    graph[i].Add(-1);
+            }
+            for (int k=0;k<I.Count;k++)
+            {
+                int i = I[k];
+                int j = J[k];
+                graph[i].Add(j);
+                graph[j].Add(i);
+            }
+            List<int> rang = new List<int>(I.Count);
+            List<int> P = new List<int>(I.Count);
+            for(int i = 0; i < max; i++)
+            {
+                rang.Add(-1);
+                P.Add(-1);
+            }
+            Queue<int> q = new Queue<int>();
+            q.Enqueue(vertex);
+            rang[vertex] = 0;
+            int c = q.Count;
+            while (c != 0)
+            {
+                int from = q.Peek();
+                q.Dequeue();
+                for (int i=0;i<graph[from].Count;i++)
+                {
+                    int to = graph[from][i];
+                    if (to>=0)
+                        if(rang[to]==-1)
+                        {
+                            q.Enqueue(to);
+                            rang[to] = rang[from] + 1;
+                            P[to] = from;
+                        }
+                }
+                c--;
+            }
+            return P;
+        }
         public void DFS(int vertex,int currComp,List<int> S,List<int> Hn)
         {
             int k = 0;
@@ -170,10 +214,10 @@ namespace lr1_ver3
                 picture.WriteLine("graph graphik{");
                 for (int i = 0; i < H.Count; i++)
                 {
-                    if (H[i] == -1) picture.WriteLine(i + "--" + i);
+                    //if (H[i] == -1) picture.WriteLine(i + "--" + i);
                     for (int k = H[i]; k != -1; k = L[k])
                     {
-                        picture.WriteLine(I[k] + "--" + J[k]);
+                        picture.WriteLine(IJ[k] + "--" + IJ[2*I.Count-1-k]);
                     }
                 }
                 picture.Write("}");
@@ -183,6 +227,45 @@ namespace lr1_ver3
             {
                 Console.WriteLine("Exception: " + e.Message);
             }
+        }
+        public void del(int vertex, int arc)
+        {
+            if (H[vertex] == arc)
+            {
+                int tmp = H[vertex];
+                H[vertex] = L[H[vertex]];
+                L[tmp] = -1;
+            }
+            else
+                for (int k = H[vertex]; k != -1; k = L[k])
+                {
+                    if (L[k] == arc)
+                    {
+                        int tmp = L[k];
+                        L[k] = L[L[k]];
+                        L[tmp] = -1;
+                    }
+                }
+        }
+
+        public void del_edge_by_arc(int arc)
+        {
+            int vertex_begin = I[arc];
+            del(vertex_begin, arc);
+        }
+
+        public void del_edge_by_vertex(int vertex_begin, int vertex_end)
+        {
+            int arc = 0;
+            for (int k = H[vertex_begin]; k != -1; k = L[k])
+            {
+                if ((I[k] == vertex_begin) && (J[k] == vertex_end))
+                {
+                    arc = k;
+                    break;
+                }
+            }
+            del(vertex_begin, arc);
         }
     }
 }
