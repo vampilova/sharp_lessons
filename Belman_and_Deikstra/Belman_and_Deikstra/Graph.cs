@@ -86,68 +86,6 @@ namespace Belman_and_Deikstra
             }
         }
 
-        public void Belman(int vertex)
-        {
-            int[] Q=new int[H.Count];
-            int h_Q, t_Q;
-            int max = 10000000;
-            R = new List<int>();
-            P = new List<int>();
-            for (int i=0;i<H.Count;i++)
-            {
-                R.Add(max);
-                P.Add(-2);
-            }
-            R[vertex] = 0;
-            P[vertex] = -1;
-            for (int i = 0; i < H.Count; i++)
-                Q[i] = -2;
-            h_Q = vertex;
-            t_Q = vertex;
-            Q[vertex] = -1;
-
-            while (h_Q!=-1)
-            {
-                int i = h_Q;
-                h_Q = Q[h_Q];
-                Q[i] = -2;
-                for (int k=H[i];k!=-1;k=L[k])
-                {
-                    int j = J[k];
-                    int rj = R[j];
-                    if (R[i]+C[k]<rj)
-                    {
-                        R[j] = R[i] + C[k];
-                        P[j] = k;
-                        if (Q[j]==-2)
-                        {
-                            if (rj==max)
-                            {
-                                if (h_Q != -1) Q[t_Q] = j;
-                                else h_Q = j;
-                                t_Q = j;
-                                Q[j] = -1;
-                            }
-                            else
-                            {
-                                Q[j] = h_Q;
-                                if (h_Q == -1) t_Q = j;
-                                h_Q = j;
-                            }
-                        }
-                    }
-                }
-            }
-
-            Console.WriteLine("Digraph G {");
-            for (int i=0;i<P.Count;i++)
-            {
-                if (P[i] == -1) continue;
-                Console.WriteLine(I[P[i]] + "->" + J[P[i]] + "[label" + C[P[i]] + "]");
-            }
-            Console.WriteLine("}");
-        }
-
         public void Ford(int vertex)
         {
             Queue<int> Q=new Queue<int>();
