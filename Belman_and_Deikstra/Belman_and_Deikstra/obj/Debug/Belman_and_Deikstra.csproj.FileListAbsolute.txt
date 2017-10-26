@@ -1,0 +1,6 @@
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\Belman_and_Deikstra\Belman_and_Deikstra\bin\Debug\Belman_and_Deikstra.exe.config
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\Belman_and_Deikstra\Belman_and_Deikstra\bin\Debug\Belman_and_Deikstra.exe
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\Belman_and_Deikstra\Belman_and_Deikstra\bin\Debug\Belman_and_Deikstra.pdb
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\Belman_and_Deikstra\Belman_and_Deikstra\obj\Debug\Belman_and_Deikstra.csprojResolveAssemblyReference.cache
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\Belman_and_Deikstra\Belman_and_Deikstra\obj\Debug\Belman_and_Deikstra.exe
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\Belman_and_Deikstra\Belman_and_Deikstra\obj\Debug\Belman_and_Deikstra.pdb

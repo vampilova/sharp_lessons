@@ -106,9 +106,17 @@ namespace lr1_ver3
             max++;
             for(int i=0;i<max;i++)
             {
+<<<<<<< HEAD
                 graph.Add(new List<int>());
                 for (int j = 0; j < max; j++)
                     graph[i].Add(-1);
+=======
+                if ((I[k] == vertex_begin) && (J[k] == vertex_end))
+                {
+                    arc = k;
+                break;
+                }
+>>>>>>> master
             }
             for (int k=0;k<I.Count;k++)
             {
