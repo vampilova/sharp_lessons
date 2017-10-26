@@ -10,9 +10,9 @@ namespace Belman_and_Deikstra
     class Graph
     {
         public List<int> I, J, L, H, C, R, P;
-        private int[] Bucket,Fw,Bk;
+        private int[] Bucket, Fw, Bk;
 
-        public Graph(List<int>I, List<int>J, List<int>C)
+        public Graph(List<int> I, List<int> J, List<int> C)
         {
             this.I = I;
             this.J = J;
@@ -21,7 +21,7 @@ namespace Belman_and_Deikstra
             this.H = new List<int>();
             int n = -1;
             int max = 0;
-            for (int i=0;i<I.Count;i++)
+            for (int i = 0; i < I.Count; i++)
             {
                 max = Math.Max(I[i], J[i]);
                 if (max > n) n = max;
@@ -35,18 +35,13 @@ namespace Belman_and_Deikstra
             C.AddRange(C);
             for (int i = 0; i < I.Count; i++)
                 L.Add(-1);
-            for (int i = 0; i < I.Count; i++)
-            {
-                int k = I[i];
-                L[i] = H[k];
-                H[k] = i;
-            }
+            buildHL();
         }
 
-        public void add(int i, int j,int c)
+        public void add(int i, int j, int c)
         {
-            I.Insert(I.Count/2,i);
-            J.Insert(J.Count/2,j);
+            I.Insert(I.Count / 2, i);
+            J.Insert(J.Count / 2, j);
             C.Insert(C.Count / 2, c);
             int max = Math.Max(i, j);
             int size = H.Count;
@@ -61,7 +56,12 @@ namespace Belman_and_Deikstra
                 L[k] = -1;
             L.Add(-1);
             L.Add(-1);
-            for(int k=0;k<I.Count;k++)
+            buildHL();
+        }
+
+        private void buildHL()
+        {
+            for (int k = 0; k < I.Count; k++)
             {
                 int z = I[k];
                 L[k] = H[z];
@@ -89,7 +89,7 @@ namespace Belman_and_Deikstra
         public void Ford(int vertex)
         {
             Queue<int> Q=new Queue<int>();
-            int max = 10000000;
+            int max = int.MaxValue;
             R = new List<int>();
             P = new List<int>();
             for (int i = 0; i < H.Count; i++)
@@ -197,7 +197,7 @@ namespace Belman_and_Deikstra
             }
         }
 
-        private int get(int k)
+        private int get(int k) //взять любую вершину из черпака r и удалить ее оттуда
         {
             int i;
             i = Bucket[k];
@@ -205,7 +205,7 @@ namespace Belman_and_Deikstra
             return i;
         }
 
-        private void insert(int i, int k)
+        private void insert(int i, int k) //поместить вершину i в черпак r
         {
             int j;
             j = Bucket[k];
@@ -214,7 +214,7 @@ namespace Belman_and_Deikstra
             Bucket[k] = i;
         }
 
-        private void remove(int i, int k)
+        private void remove(int i, int k) //удалить вершину i из черпака r
         {
             int fi = Fw[i];
             int bi = Bk[i];
@@ -226,6 +226,5 @@ namespace Belman_and_Deikstra
                 if (fi != -1) Bk[fi] = bi;
             }
         }
-
     }
 }
