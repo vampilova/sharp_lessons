@@ -1,0 +1,6 @@
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\BFS_DFS_Deikstra\BFS_DFS_Deikstra\bin\Debug\BFS_DFS_Deikstra.exe.config
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\BFS_DFS_Deikstra\BFS_DFS_Deikstra\bin\Debug\BFS_DFS_Deikstra.exe
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\BFS_DFS_Deikstra\BFS_DFS_Deikstra\bin\Debug\BFS_DFS_Deikstra.pdb
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\BFS_DFS_Deikstra\BFS_DFS_Deikstra\obj\Debug\BFS_DFS_Deikstra.csprojResolveAssemblyReference.cache
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\BFS_DFS_Deikstra\BFS_DFS_Deikstra\obj\Debug\BFS_DFS_Deikstra.exe
+C:\Users\1\Desktop\V semester\Комбинаторика и теория графов\BFS_DFS_Deikstra\BFS_DFS_Deikstra\obj\Debug\BFS_DFS_Deikstra.pdb
