@@ -1,0 +1,5 @@
+/Users/erzenavampilova/Documents/vmp_files/Heap/Heap/bin/Debug/Heap.exe
+/Users/erzenavampilova/Documents/vmp_files/Heap/Heap/bin/Debug/Heap.pdb
+/Users/erzenavampilova/Documents/vmp_files/Heap/Heap/obj/x86/Debug/Heap.csproj.CoreCompileInputs.cache
+/Users/erzenavampilova/Documents/vmp_files/Heap/Heap/obj/x86/Debug/Heap.exe
+/Users/erzenavampilova/Documents/vmp_files/Heap/Heap/obj/x86/Debug/Heap.pdb

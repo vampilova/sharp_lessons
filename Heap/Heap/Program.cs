@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Heap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Heap H = new Heap(new int[] { 7, 9, 11, 50, 65, 13, 77, 6, 5, 2 });
+            H.MAKE_HEAP();
+            int[] sort;
+            for (int i = 0; i < H.A.Length; i++)
+                Console.Write(H.A[i] + " ");
+            Console.WriteLine();
+            sort = H.piramid_sort();
+            for (int i = 0; i < sort.Length; i++)
+                Console.Write(sort[i] + " ");
+            Console.ReadKey();
+        }
+    }
+}

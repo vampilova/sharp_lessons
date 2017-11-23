@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{491255F8-05D0-4258-94F8-1CC5723A32E4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Heap/Program.cs">
+    <Files>
+      <File FileName="Heap/Program.cs" Line="25" Column="2" />
+      <File FileName="Heap/Heap.cs" Line="73" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Heap PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
